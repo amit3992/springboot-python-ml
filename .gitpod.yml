@@ -9,8 +9,8 @@ tasks:
     init: mvn package -DskipTests
   - name: player-service-model
     before: |
-      cd player-service-model
-    init: pip3 install -r requirements.txt
+      cd a4a_model-main
+    init: docker build -t a4a_model .
 
 ports:
   - port: 8080  # Port for player-service-app
