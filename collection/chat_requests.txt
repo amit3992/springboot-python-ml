@@ -11,3 +11,6 @@ curl --location 'http://localhost:8080/v1/chat' \
 --data '{
     "prompt": "Write a haiku about recursion in programming."
 }'
+
+//test_model
+curl -H "Content-type: application/json" -d '{"seed_id":"abbotji01","team_size":10}' https://5000-gitpoddemo-springbootpy-gseebnd5vm1.ws-us116.gitpod.io/predict

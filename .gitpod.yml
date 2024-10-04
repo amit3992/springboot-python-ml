@@ -5,12 +5,17 @@ image:
 tasks:
   - name: player-service-app
     before: |
-      pwd
       cd player-service
     init: mvn package -DskipTests
+  - name: player-service-model
+    before: |
+      cd player-service-model
+    init: pip3 install -r requirements.txt
 
 ports:
-  - port: 8080  # Port for Spring Boot
+  - port: 8080  # Port for player-service-app
+    onOpen: open-preview
+  - port: 5000  # Port for player-service-model
     onOpen: open-preview
 
 vscode:
